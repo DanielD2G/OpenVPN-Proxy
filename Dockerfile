@@ -9,8 +9,6 @@ RUN mkdir -p /etc/squid /etc/openvpn /var/log/squid
 # Copy configuration files (if you have them)
 COPY squid.conf /etc/squid/squid.conf
 
-# COPY nginx.conf /etc/nginx/nginx.conf
-
 # Startup script
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
