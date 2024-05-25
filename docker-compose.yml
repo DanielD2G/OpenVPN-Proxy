@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  openvpn-proxy:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    volumes:
+      - ./ovpn_files:/openvpn/
+    environment:
+      - CONFIG_FILE=config.ovpn
+      - OVPN_USER=${OVPN_USER}
+      - OVPN_PASS=${OVPN_PASS}
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    ports:
+      - "8080:3128"
