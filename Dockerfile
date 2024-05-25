@@ -14,5 +14,4 @@ COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
 # Default command to run OpenVPN
-#CMD ["openvpn", "--config", "/openvpn/config.ovpn"]
 CMD ["/start.sh"]
